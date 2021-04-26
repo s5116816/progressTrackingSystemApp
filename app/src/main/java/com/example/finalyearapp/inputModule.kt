@@ -1,5 +1,6 @@
 package com.example.finalyearapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
@@ -21,6 +22,7 @@ class inputModule : AppCompatActivity() {
 
     //store list of chapters
      var chapterList = arrayListOf<String>()
+
 
 
     fun addToList(view: View){
@@ -45,8 +47,6 @@ class inputModule : AppCompatActivity() {
 
             chapterList.remove(userInput)
         }
-
-
     }
 
 
@@ -66,7 +66,14 @@ class inputModule : AppCompatActivity() {
 
             chapterList.remove(artifactUserInput)
         }
+    }
 
+    fun continueToTracker(view: View){
+
+        //activate the tracker activity
+        val intent = Intent(this,trackerModule::class.java)
+        intent.putExtra("chapter-list", chapterList)
+        startActivity(intent)
 
     }
 
