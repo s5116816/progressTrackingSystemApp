@@ -23,7 +23,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="addToList"
+        android:onClick="addToChapter"
         android:text="@string/add_chapter_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,11 +32,11 @@
         app:layout_constraintVertical_bias="0.036" />
 
     <TextView
-        android:id="@+id/chapterContainer"
+        android:id="@+id/chapterTextView"
         android:layout_width="372dp"
         android:layout_height="133dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/moduleUserInput"
+        app:layout_constraintBottom_toTopOf="@+id/artefactUserInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.191" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/moduleUserInput"
+        android:id="@+id/artefactUserInput"
         android:layout_width="215dp"
         android:layout_height="59dp"
         android:hint="@string/userInputModule"
@@ -60,16 +60,16 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="addToModule"
+        android:onClick="addToArtefact"
         android:text="@string/addModuleButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/moduleUserInput"
+        app:layout_constraintStart_toEndOf="@+id/artefactUserInput"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.478" />
 
     <TextView
-        android:id="@+id/moduleContainer"
+        android:id="@+id/artefactTextView"
         android:layout_width="370dp"
         android:layout_height="133dp"
         android:scrollbars="vertical"
@@ -77,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moduleUserInput"
+        app:layout_constraintTop_toBottomOf="@+id/artefactUserInput"
         app:layout_constraintVertical_bias="0.098" />
 
     <Button
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moduleContainer"
+        app:layout_constraintTop_toBottomOf="@+id/artefactTextView"
         app:layout_constraintVertical_bias="0.516" />
 
 

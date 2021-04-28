@@ -5,4 +5,9 @@
     <string name="userInputModule">Enter module name</string>
     <string name="addModuleButton">Add</string>
     <string name="continueButton">Continue</string>
+    <string name="aboutButton">About</string>
+    <string name="createTrackerButton">create tracker</string>
+    <string name="trackerButton">Tracker</string>
+    <string name="userInfoButton">User info</string>
+    <string name="deleteMe">im a test dummy</string>
 </resources>

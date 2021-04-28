@@ -6,20 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".trackerModule">
 
+    <ProgressBar
+        android:id="@+id/circleProgressBar"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginRight="104dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle_progress_bar"
+        android:progress="50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005" />
+
     <ScrollView
         android:id="@+id/scrollableTrackerList"
-        android:layout_width="227dp"
-        android:layout_height="415dp"
+        android:layout_width="160dp"
+        android:layout_height="338dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.686">
-            <LinearLayout
-                android:id="@+id/trackerList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/trackerList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

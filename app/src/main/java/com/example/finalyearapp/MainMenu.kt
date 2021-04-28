@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-    //Functions below handle navigation thoughout the app
+    //Functions below handle navigation throughout the app
     fun toAbout(view: View){
         val intent = Intent(this,AboutApp::class.java)
             startActivity(intent)
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    //does not work
     fun toTracker(view: View){
         val intent = Intent(this,trackerModule::class.java)
         startActivity(intent)

@@ -14,63 +14,64 @@ class inputModule : AppCompatActivity() {
         setContentView(R.layout.activity_input_module)
 
         //allows textViews to scroll vertically
-        val chapterScrollable: TextView = findViewById(R.id.chapterContainer)
-        val moduleScrollable: TextView = findViewById(R.id.moduleContainer)
+        val chapterScrollable: TextView = findViewById(R.id.chapterTextView)
+        val artefactScrollable: TextView = findViewById(R.id.artefactTextView)
         chapterScrollable.movementMethod = ScrollingMovementMethod()
-        moduleScrollable.movementMethod = ScrollingMovementMethod()
+        artefactScrollable.movementMethod = ScrollingMovementMethod()
     }
 
-    //store list of chapters
+    //store list of chapters from each user input
      var chapterList = arrayListOf<String>()
 
+    //gets input from chapterUserInput and outputs it in chapterTextView.
+    // Each input will be added in the array of chapterlist
+    fun addToChapter(view: View){
 
-
-    fun addToList(view: View){
-
-        //referencing textview and editText
+        //variables holding chapterUserInput and chapterTextView
         val chapterUserInput = findViewById<EditText>(R.id.chapterUserInput)
-        val chapterTextView = findViewById<TextView>(R.id.chapterContainer)
+        val chapterTextView = findViewById<TextView>(R.id.chapterTextView)
 
-        //change user input to string
-        val userInput = chapterUserInput.text.toString()
+        //converts user input to a string
+        val userInput1 = chapterUserInput.text.toString()
 
 
-        //add user input in textview
-        chapterTextView.append(userInput)
+        //adds the string into the Textview
+        chapterTextView.append(userInput1)
         chapterTextView.append("\n")
 
-        //add input in array
-        chapterList.add(userInput)
+        //string will be added to array
+        chapterList.add(userInput1)
 
-        //remove from list if input hasn't been entered
-        if(userInput == ""){
+        //removes string from array if string is empty
+        if(userInput1 == ""){
 
-            chapterList.remove(userInput)
+            chapterList.remove(userInput1)
         }
     }
 
+    // same process as addToChapter function
+    fun addToArtefact(view: View){
 
-    fun addToModule(view: View){
+        val moduleUserInput = findViewById<EditText>(R.id.artefactUserInput)
+        val moduleTextView = findViewById<TextView>(R.id.artefactTextView)
 
-        val moduleUserInput = findViewById<EditText>(R.id.moduleUserInput)
-        val moduleTextView = findViewById<TextView>(R.id.moduleContainer)
+        val userInput2 = moduleUserInput.text.toString()
 
-        val artifactUserInput = moduleUserInput.text.toString()
-
-        moduleTextView.append(artifactUserInput)
+        moduleTextView.append(userInput2)
         moduleTextView.append("\n")
 
-        chapterList.add(artifactUserInput)
+        chapterList.add(userInput2)
 
-        if(artifactUserInput == ""){
 
-            chapterList.remove(artifactUserInput)
+        if(userInput2 == ""){
+
+            chapterList.remove(userInput2)
         }
     }
 
+    //moves to trackermodule and pass on chapterlist to that activity
     fun continueToTracker(view: View){
 
-        //activate the tracker activity
         val intent = Intent(this,trackerModule::class.java)
         intent.putExtra("chapter-list", chapterList)
         startActivity(intent)
