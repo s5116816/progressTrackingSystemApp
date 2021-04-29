@@ -14,7 +14,6 @@
         android:layout_marginRight="104dp"
         android:indeterminateOnly="false"
         android:progressDrawable="@drawable/circle_progress_bar"
-        android:progress="50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -38,4 +37,13 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView_progressPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/circleProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/circleProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/circleProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/circleProgressBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
