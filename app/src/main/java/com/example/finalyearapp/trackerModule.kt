@@ -19,62 +19,192 @@ class trackerModule : AppCompatActivity() {
         //getting chapterList from inputModule
         val chapterList = intent.getStringArrayListExtra("chapter-list")
 
-
         //holding a linearLayout from this activity's xml in a variable
         val scrollableList: LinearLayout = findViewById(R.id.trackerList)
 
-        //checks how many buttons are in linearLayout
+        //the current amount of buttons being made dynamically are stored here
         var buttonValue = 0
 
-        var circleProgr = 0
+        //used for increasing and decreasing progress, initialized as 0.0
+        var circleProgr = 0.0
 
 
-        fun progressBarUpdate(){
+        //update the progress bar in XML file based on button clicks
+        fun progressBarUpdate() {
 
+            //my variables for progress bar and textview
             val circleProgressBar = findViewById<ProgressBar>(R.id.circleProgressBar)
             val textViewProgressPercentage = findViewById<TextView>(R.id.textView_progressPercentage)
 
-            circleProgressBar. progress = circleProgr
-            textViewProgressPercentage.text = "$circleProgr%"
+
+            //outputs the progress in the progress bar
+            // textView outputs the current progress level, outputs a string between 0 and 100
+            circleProgressBar.progress = circleProgr.toInt()
+            textViewProgressPercentage.text = circleProgressBar.progress.toString()
         }
 
 
-        //loops through the chapterList array to generate buttons dynamically
-        // and add them in the linearLayout
-        for (i in chapterList){
+        //loops through the chapterList array to generate buttons dynamically,
+        //add them in the linearLayout
+        // and providing setOnclicklistners for each generated button
+        for (i in chapterList) {
 
-            var isGreen = false
-
+            // button created here
             val button = Button(this)
-            button.layoutParams =  LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            button.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             button.text = i
 
+            //add button to linearLayout and increase button value by 1 increment
             scrollableList.addView(button)
-            buttonValue+=1
+            buttonValue += 1
 
-            // creates function for buttons
-            button.setOnClickListener{
-                //enter function for buttons here
+            // boolean initialized as false as buttons don't have a green color once made
+            var isGreen = false
+
+            // gives buttons an onclickListener to be able to increase or degrease progress in
+            //progress bar
+            button.setOnClickListener {
 
 
-                if (!isGreen){
-                    if (buttonValue == 2){
+                // checks if button is not green
+                if (!isGreen) {
 
-                        circleProgr+= 50
-                        button.setBackgroundColor(Color.GREEN)
-                        isGreen = true
-                        progressBarUpdate()
+                    //checks current button value to execute one of these statements
+                    when (buttonValue) {
 
+                        // increase circleProgr, change color to green
+                        //set isgreen to true and execute progressBarUpdate function
+                        1 -> {
+                            circleProgr += 100
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        2 -> {
+                            circleProgr += 50
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        3 -> {
+                            circleProgr += 33.4
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        4 -> {
+                            circleProgr += 25
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        5 -> {
+                            circleProgr += 20
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        6 -> {
+                            circleProgr += 16.7
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        7 -> {
+                            circleProgr += 14.3
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        8 -> {
+                            circleProgr += 12.5
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        9 -> {
+                            circleProgr += 11.2
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
+                        10 -> {
+                            circleProgr += 10
+                            button.setBackgroundColor(Color.GREEN)
+                            isGreen = true
+                            progressBarUpdate()
+                        }
                     }
-                } else if (isGreen){
 
-                    if (buttonValue == 2){
 
-                        circleProgr-=50
-                        button.setBackgroundColor(Color.WHITE)
-                        isGreen = false
-                        progressBarUpdate()
+                    // checks if button is green
+                } else if (isGreen) {
 
+                    // execute one of the statements based on button value
+                    when (buttonValue) {
+
+                        // degrease circleProgr, change color to white
+                        //set isgreen to false and execute progressBarUpdate function
+                        1 -> {
+                            circleProgr -= 100
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        2 -> {
+                            circleProgr -= 50
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        3 -> {
+                            circleProgr -= 33.4
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        4 -> {
+                            circleProgr -= 25
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        5 -> {
+                            circleProgr -= 20
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        6 -> {
+                            circleProgr -= 16.7
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        7 -> {
+                            circleProgr -= 14.3
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        8 -> {
+                            circleProgr -= 12.5
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        9 -> {
+                            circleProgr -= 11.2
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
+                        10 -> {
+                            circleProgr -= 10
+                            button.setBackgroundColor(Color.WHITE)
+                            isGreen = false
+                            progressBarUpdate()
+                        }
                     }
                 }
             }
